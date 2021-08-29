@@ -1,0 +1,1 @@
+export type AlwaysNever = 'always' | 'never';

@@ -1,6 +1,31 @@
 {
   "version": 2,
-  "projects": {},
+  "projects": {
+    "eslint-typescript-config": {
+      "root": "packages/eslint-typescript-config",
+      "sourceRoot": "packages/eslint-typescript-config/src",
+      "projectType": "library",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/node:package",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/packages/eslint-typescript-config",
+            "tsConfig": "packages/eslint-typescript-config/tsconfig.lib.json",
+            "packageJson": "packages/eslint-typescript-config/package.json",
+            "main": "packages/eslint-typescript-config/src/index.ts",
+            "assets": ["packages/eslint-typescript-config/*.md"]
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["packages/eslint-typescript-config/**/*.ts"]
+          }
+        }
+      }
+    }
+  },
   "cli": {
     "defaultCollection": "@nrwl/workspace"
   }
